@@ -313,7 +313,7 @@ def run(
                         """
                         - 특정 folder 내에 있는 "가장 최근에 생성된" 파일을 리턴하는 방법 
                         """
-                        folder_path = 'runs/detect/result/crops/license_plate/'
+                        folder_path = 'HBOS3/runs/detect/result/crops/license_plate/'
 
                         # each_file_path_and_gen_time: 각 file의 경로와, 생성 시간을 저장함
                         each_file_path_and_gen_time = []
@@ -659,11 +659,11 @@ def run(
         strip_optimizer(weights[0])  # update model (to fix SourceChangeWarning)
 
 def excel(chars):
-    df = pd.read_excel('plates.xlsx', sheet_name='Sheet1')
+    df = pd.read_excel('HBOS3/plates.xlsx', sheet_name='Sheet1')
 
     df.loc[len(df)] = [chars]
     # Excel 파일로 저장
-    df.to_excel('plates.xlsx', index=False, sheet_name='Sheet1')
+    df.to_excel('HBOS3/plates.xlsx', index=False, sheet_name='Sheet1')
 
     df.info
 
